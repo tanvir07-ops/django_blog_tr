@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}(@ {{ user.username }} ) | Change-image{% endblock %}
+
+{% block content %}
+
+
+<form method="POST" enctype="multipart/form-data">
+
+   {{ form|crispy }}
+   {% csrf_token %}
+   <button type = "submit" class = "btn btn-warning btn-sm">Change Image</button>
+
+
+</form>
+
+
+{% endblock %}

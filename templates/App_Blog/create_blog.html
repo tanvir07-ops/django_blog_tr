@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<h2 class="text-info">Write Your Blog Here:</h2>
+<hr size= "3" noshade style = "width:100%; border : 3px dotted #bbb; border-radius:15px">
+<br>
+<form method = "POST" enctype = "multipart/form-data">
+ {{ form|crispy }}
+ {% csrf_token %}
+ <button type="submit" class = "btn btn-success btn-sm">Publish</button>
+
+
+</form>
+
+
+{% endblock %}
